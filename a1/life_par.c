@@ -1,5 +1,5 @@
 /******************************************************
- ************* Conway's game of life ******************
+************* Conway's game of life *******************
  ******************************************************
 
     Usage: ./exec ArraySize TimeSteps
@@ -31,8 +31,7 @@ int main(int argc, char *argv[])
     int N;                     // array dimensions
     int T;                     // time steps
     int **current, **previous; // arrays - one for current timestep, one for previous timestep
-    int **swap;                // array pointer
-    int t, i, j, nbrs;         // helper variables
+    int t, i, j;               // helper variables
 
     double time; // variables for timing
     struct timeval ts, tf;
@@ -63,39 +62,32 @@ int main(int argc, char *argv[])
 
     gettimeofday(&ts, NULL);
 
-#pragma omp parallel
+    for (t = 0; t < T; t++)
     {
-        for (t = 0; t < T; t++)
-        {
 
-/* collapse(2) flattens the nested loops into one larger iteration space and splits it among threads */
-#pragma omp for collapse(2)
-            for (i = 1; i < N - 1; i++)
-                for (j = 1; j < N - 1; j++)
-                {
-                    nbrs = previous[i + 1][j + 1] + previous[i + 1][j] + previous[i + 1][j - 1] + previous[i][j - 1] + previous[i][j + 1] + previous[i - 1][j - 1] + previous[i - 1][j] + previous[i - 1][j + 1];
-                    if (nbrs == 3 || (previous[i][j] + nbrs == 3))
-                        current[i][j] = 1;
-                    else
-                        current[i][j] = 0;
-                }
+#pragma omp parallel for
+        for (i = 1; i < N - 1; i++)
+        {
+            for (j = 1; j < N - 1; j++)
+            {
+                int nbrs = /* <-- declare here to make it private */
+                    previous[i + 1][j + 1] + previous[i + 1][j] + previous[i + 1][j - 1] +
+                    previous[i][j - 1] + previous[i][j + 1] +
+                    previous[i - 1][j - 1] + previous[i - 1][j] + previous[i - 1][j + 1];
+
+                current[i][j] = (nbrs == 3 || (previous[i][j] + nbrs == 3)) ? 1 : 0;
+            }
+        } /* implicit barrier here: all threads finished this timestep */
 
 #ifdef OUTPUT
-#pragma omp single
-            {
-                print_to_pgm(current, N, t + 1);
-            }
+        print_to_pgm(current, N, t + 1);
 #endif
 
-// Swap current array with previous array
-#pragma omp single
-            {
-                swap = current;
-                current = previous;
-                previous = swap;
-            }
-        }
+        int **tmp = current;
+        current = previous;
+        previous = tmp;
     }
+
     gettimeofday(&tf, NULL);
     time = (tf.tv_sec - ts.tv_sec) + (tf.tv_usec - ts.tv_usec) * 0.000001;
 
@@ -156,3 +148,4 @@ void print_to_pgm(int **array, int N, int t)
     fclose(f);
     free(s);
 }
+
