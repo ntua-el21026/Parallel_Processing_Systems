@@ -1,0 +1,92 @@
+Parallel_Processing_Systems/
+├── a1/
+│   ├── benchmarks/
+│   │   ├── N1024_T1/
+│   │   │   ├── life_1_1024.err
+│   │   │   └── life_1_1024.out
+│   │   ├── N1024_T2/
+│   │   │   ├── life_2_1024.err
+│   │   │   └── life_2_1024.out
+│   │   ├── N1024_T4/
+│   │   │   ├── life_4_1024.err
+│   │   │   └── life_4_1024.out
+│   │   ├── N1024_T6/
+│   │   │   ├── life_6_1024.err
+│   │   │   └── life_6_1024.out
+│   │   ├── N1024_T8/
+│   │   │   ├── life_8_1024.err
+│   │   │   └── life_8_1024.out
+│   │   ├── N4096_T1/
+│   │   │   ├── life_1_4096.err
+│   │   │   └── life_1_4096.out
+│   │   ├── N4096_T2/
+│   │   │   ├── life_2_4096.err
+│   │   │   └── life_2_4096.out
+│   │   ├── N4096_T4/
+│   │   │   ├── life_4_4096.err
+│   │   │   └── life_4_4096.out
+│   │   ├── N4096_T6/
+│   │   │   ├── life_6_4096.err
+│   │   │   └── life_6_4096.out
+│   │   ├── N4096_T8/
+│   │   │   ├── life_8_4096.err
+│   │   │   └── life_8_4096.out
+│   │   ├── N64_T1/
+│   │   │   ├── life_1_64.err
+│   │   │   └── life_1_64.out
+│   │   ├── N64_T2/
+│   │   │   ├── life_2_64.err
+│   │   │   └── life_2_64.out
+│   │   ├── N64_T4/
+│   │   │   ├── life_4_64.err
+│   │   │   └── life_4_64.out
+│   │   ├── N64_T6/
+│   │   │   ├── life_6_64.err
+│   │   │   └── life_6_64.out
+│   │   └── N64_T8/
+│   │       ├── life_8_64.err
+│   │       └── life_8_64.out
+│   ├── diagrams/
+│   │   └── diagrams.py
+│   ├── docs/
+│   │   ├── askisi1-2025-2026.pdf
+│   │   └── pps_exercises_2025_2026.pdf
+│   ├── game_of_life.c
+│   ├── life_par
+│   ├── life_par.c
+│   ├── life_par.err
+│   ├── life_par.out
+│   ├── make_on_queue.sh
+│   ├── Makefile
+│   ├── makejob.err
+│   ├── makejob.out
+│   └── run_on_queue.sh
+├── a2/
+│   └── docs/
+├── a3/
+│   └── docs/
+├── a4/
+│   └── docs/
+│       └── docs/
+├── a5/
+├── docs/
+│   ├── misc/
+│   │   ├── pps-lab-guide_pres.pdf
+│   │   └── pps_lab_guide.pdf
+│   ├── project_structure/
+│   │   └── project_struct.py
+│   └── report/
+│       ├── final/
+│       └── individual/
+│           └── report_a1.docx
+├── shell_scripts/
+│   ├── mount_orion.sh
+│   ├── push_to_orion.sh
+│   ├── push_to_scirouter.sh
+│   ├── README.md
+│   └── unmount_orion.sh
+├── .gitignore
+├── LICENSE
+└── README.md
+
+Total directories: 35, Total files: 55
