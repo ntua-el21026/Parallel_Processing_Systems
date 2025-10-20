@@ -1,5 +1,5 @@
 /******************************************************
-************* Conway's game of life *******************
+ ************* Conway's game of life ******************
  ******************************************************
 
     Usage: ./exec ArraySize TimeSteps
@@ -31,7 +31,8 @@ int main(int argc, char *argv[])
     int N;                     // array dimensions
     int T;                     // time steps
     int **current, **previous; // arrays - one for current timestep, one for previous timestep
-    int t, i, j;               // helper variables
+    int **swap;                // array pointer
+    int i, j, t, nbrs;         // helper variables
 
     double time; // variables for timing
     struct timeval ts, tf;
@@ -62,30 +63,40 @@ int main(int argc, char *argv[])
 
     gettimeofday(&ts, NULL);
 
-    for (t = 0; t < T; t++)
+    gettimeofday(&ts, NULL);
+
+    for (t = 0; t < T; ++t)
     {
 
-#pragma omp parallel for
-        for (i = 1; i < N - 1; i++)
+/* Parallelize rows; implicit barrier at loop end */
+/*  scedule is static
+    (i, j) as loop indices are private
+    (N, previous, current) are shared, as they are enclosed by the loop
+    nbrs must be private
+    by default */
+/* Kept here for clarity */
+#pragma omp parallel for schedule(static) private(i, j, nbrs) shared(N, previous, current)
+        for (i = 1; i < N - 1; ++i)
         {
-            for (j = 1; j < N - 1; j++)
+            for (j = 1; j < N - 1; ++j)
             {
-                int nbrs = /* <-- declare here to make it private */
+                nbrs =
                     previous[i + 1][j + 1] + previous[i + 1][j] + previous[i + 1][j - 1] +
                     previous[i][j - 1] + previous[i][j + 1] +
                     previous[i - 1][j - 1] + previous[i - 1][j] + previous[i - 1][j + 1];
 
                 current[i][j] = (nbrs == 3 || (previous[i][j] + nbrs == 3)) ? 1 : 0;
             }
-        } /* implicit barrier here: all threads finished this timestep */
+        } /* implicit barrier here: all threads finished step t */
 
 #ifdef OUTPUT
-        print_to_pgm(current, N, t + 1);
+        print_to_pgm(current, N, t + 1); /* single thread here: we're back in serial */
 #endif
 
-        int **tmp = current;
+        /* Safe to swap: we're outside the parallel region created by 'parallel for' */
+        swap = current;
         current = previous;
-        previous = tmp;
+        previous = swap;
     }
 
     gettimeofday(&tf, NULL);

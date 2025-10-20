@@ -1,1 +1,1 @@
-make: Nothing to be done for 'all'.
+gcc -O3 -fopenmp -o life_par life_par.c

@@ -1,28 +1,31 @@
 #!/bin/bash
-#PBS -q parlab
+
+## Give the Job a descriptive name
 #PBS -N life_par
+
+## Output and error files
 #PBS -o life_par.out
 #PBS -e life_par.err
+
+## How many machines should we get?
 #PBS -l nodes=1:ppn=8
-#PBS -l walltime=00:10:00
 
-# OpenMP job — no MPI needed
-module load openmpi/1.8.3
+## How long should the job run for?
+#PBS -l walltime=01:00:00
 
-# Defaults if not passed via -v
+## Module Load
+module load openmp
+
+## Defaults if not passed via -v
 : "${THREADS:=8}"
 : "${N:=1024}"
 : "${STEPS:=1000}"
 
+## Start
 cd /home/parallel/parlab05/a1/ || exit 1
 
 # --- OpenMP runtime settings ---
 export OMP_NUM_THREADS="${THREADS}"   # 1,2,4,6,8 per the assignment
-export OMP_PROC_BIND=TRUE             # pin threads to CPUs (stable timing)
-export OMP_PLACES=cores               # one “place” per core
-
-# Optional: make scheduling explicit (matches default, but reproducible)
-export OMP_SCHEDULE=static
 
 # Run and capture outputs by config
 RESULT_DIR="benchmarks/N${N}_T${THREADS}"

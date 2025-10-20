@@ -12,7 +12,7 @@
 
 ## Start
 ## Load appropriate module
-module load openmpi/1.8.3
+module load openmp
 
 ## Run make in the src folder (modify properly)
 cd /home/parallel/parlab05/a1/
