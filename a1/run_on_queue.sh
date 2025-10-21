@@ -34,4 +34,3 @@ mkdir -p "${RESULT_DIR}"
 ./life_par "${N}" "${STEPS}" \
   > "${RESULT_DIR}/life_${THREADS}_${N}.out" \
   2> "${RESULT_DIR}/life_${THREADS}_${N}.err"
-
