@@ -47,7 +47,14 @@ Parallel_Processing_Systems/
 │   │       ├── life_8_64.err
 │   │       └── life_8_64.out
 │   ├── diagrams/
-│   │   └── diagrams.py
+│   │   ├── diagrams.py
+│   │   ├── results_full.txt
+│   │   ├── speedup_N1024.png
+│   │   ├── speedup_N4096.png
+│   │   ├── speedup_N64.png
+│   │   ├── time_N1024.png
+│   │   ├── time_N4096.png
+│   │   └── time_N64.png
 │   ├── docs/
 │   │   ├── askisi1-2025-2026.pdf
 │   │   └── pps_exercises_2025_2026.pdf
@@ -71,14 +78,30 @@ Parallel_Processing_Systems/
 ├── a5/
 ├── docs/
 │   ├── misc/
+│   │   ├── File transfers.txt
+│   │   ├── Lab code.txt
 │   │   ├── pps-lab-guide_pres.pdf
 │   │   └── pps_lab_guide.pdf
 │   ├── project_structure/
-│   │   └── project_struct.py
+│   │   ├── project_struct.py
+│   │   └── project_struct.txt
 │   └── report/
 │       ├── final/
-│       └── individual/
-│           └── report_a1.docx
+│       ├── individual/
+│       │   ├── a1/
+│       │   │   ├── report_misc/
+│       │   │   │   ├── life_par.c.pdf
+│       │   │   │   ├── make_on_queue.sh.pdf
+│       │   │   │   ├── Makefile.pdf
+│       │   │   │   └── run_on_queue.sh.pdf
+│       │   │   ├── parlab05_report_a1.docx
+│       │   │   ├── parlab05_report_a1.pdf
+│       │   │   └── parlab05_report_a1_final.pdf
+│       │   ├── a2/
+│       │   ├── a3/
+│       │   ├── a4/
+│       │   └── a5/
+│       └── parlab05 - report_template.docx
 ├── shell_scripts/
 │   ├── mount_orion.sh
 │   ├── push_to_orion.sh
@@ -89,4 +112,4 @@ Parallel_Processing_Systems/
 ├── LICENSE
 └── README.md
 
-Total directories: 35, Total files: 55
+Total directories: 41, Total files: 72
