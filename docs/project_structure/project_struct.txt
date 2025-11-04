@@ -69,7 +69,34 @@ Parallel_Processing_Systems/
 │   ├── makejob.out
 │   └── run_on_queue.sh
 ├── a2/
-│   └── docs/
+│   ├── diagrams/
+│   │   ├── FW/
+│   │   └── kmeans/
+│   ├── docs/
+│   │   ├── askisi2-2025-26.pdf
+│   │   └── pps_exercises_2025_2026.pdf
+│   ├── FW/
+│   │   ├── benchmarks/
+│   │   ├── fw.c
+│   │   ├── fw_sr.c
+│   │   ├── fw_tiled.c
+│   │   ├── make_on_queue.sh
+│   │   ├── Makefile
+│   │   ├── run_on_queue.sh
+│   │   ├── util.c
+│   │   └── util.h
+│   └── kmeans/
+│       ├── benchmarks/
+│       ├── file_io.c
+│       ├── kmeans.h
+│       ├── main.c
+│       ├── make_on_queue.sh
+│       ├── Makefile
+│       ├── omp_naive_kmeans.c
+│       ├── omp_reduction_kmeans.c
+│       ├── run_on_queue.sh
+│       ├── seq_kmeans.c
+│       └── util.c
 ├── a3/
 │   └── docs/
 ├── a4/
@@ -77,7 +104,13 @@ Parallel_Processing_Systems/
 │       └── docs/
 ├── a5/
 ├── docs/
+│   ├── lecture_slides/
 │   ├── misc/
+│   │   ├── lecture_notes/
+│   │   │   ├── OpenMP.pdf
+│   │   │   ├── Εισαγωγή.pdf
+│   │   │   ├── Παράλληλος Προγραμματισμός, Μέρος Α.pdf
+│   │   │   └── Παράλληλος Προγραμματισμός, Μέρος Β.pdf
 │   │   ├── File transfers.txt
 │   │   ├── Lab code.txt
 │   │   ├── pps-lab-guide_pres.pdf
@@ -112,4 +145,4 @@ Parallel_Processing_Systems/
 ├── LICENSE
 └── README.md
 
-Total directories: 41, Total files: 72
+Total directories: 50, Total files: 96
