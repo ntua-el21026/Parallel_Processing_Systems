@@ -1,0 +1,6 @@
+[run_on_queue] BIN=omp_naive_kmeans
+[run_on_queue] OMP_NUM_THREADS=1
+[run_on_queue] GOMP_CPU_AFFINITY=<unset>
+[run_on_queue] AFF_LABEL=noaff
+[run_on_queue] Params: -s 256 -n 16 -c 32 -l 10
+[run_on_queue] Result dir: /home/parallel/parlab05/a2/kmeans/benchmarks/naive/noaff/S256_N16_C32_L10_T1
