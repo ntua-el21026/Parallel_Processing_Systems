@@ -74,12 +74,59 @@ Parallel_Processing_Systems/
 │   │   └── pps_exercises_2025_2026.pdf
 │   ├── FW/
 │   │   ├── benchmarks/
-│   │   ├── diagrams/
+│   │   │   ├── fw_sr_p_N1024_T1.err
+│   │   │   ├── fw_sr_p_N1024_T1.out
+│   │   │   ├── fw_sr_p_N1024_T16.err
+│   │   │   ├── fw_sr_p_N1024_T16.out
+│   │   │   ├── fw_sr_p_N1024_T2.err
+│   │   │   ├── fw_sr_p_N1024_T2.out
+│   │   │   ├── fw_sr_p_N1024_T32.err
+│   │   │   ├── fw_sr_p_N1024_T32.out
+│   │   │   ├── fw_sr_p_N1024_T4.err
+│   │   │   ├── fw_sr_p_N1024_T4.out
+│   │   │   ├── fw_sr_p_N1024_T64.err
+│   │   │   ├── fw_sr_p_N1024_T64.out
+│   │   │   ├── fw_sr_p_N1024_T8.err
+│   │   │   ├── fw_sr_p_N1024_T8.out
+│   │   │   ├── fw_sr_p_N2048_T1.err
+│   │   │   ├── fw_sr_p_N2048_T1.out
+│   │   │   ├── fw_sr_p_N2048_T16.err
+│   │   │   ├── fw_sr_p_N2048_T16.out
+│   │   │   ├── fw_sr_p_N2048_T2.err
+│   │   │   ├── fw_sr_p_N2048_T2.out
+│   │   │   ├── fw_sr_p_N2048_T32.err
+│   │   │   ├── fw_sr_p_N2048_T32.out
+│   │   │   ├── fw_sr_p_N2048_T4.err
+│   │   │   ├── fw_sr_p_N2048_T4.out
+│   │   │   ├── fw_sr_p_N2048_T64.err
+│   │   │   ├── fw_sr_p_N2048_T64.out
+│   │   │   ├── fw_sr_p_N2048_T8.err
+│   │   │   ├── fw_sr_p_N2048_T8.out
+│   │   │   ├── fw_sr_p_N4096_T1.err
+│   │   │   ├── fw_sr_p_N4096_T1.out
+│   │   │   ├── fw_sr_p_N4096_T16.err
+│   │   │   ├── fw_sr_p_N4096_T16.out
+│   │   │   ├── fw_sr_p_N4096_T2.err
+│   │   │   ├── fw_sr_p_N4096_T2.out
+│   │   │   ├── fw_sr_p_N4096_T32.err
+│   │   │   ├── fw_sr_p_N4096_T32.out
+│   │   │   ├── fw_sr_p_N4096_T4.err
+│   │   │   ├── fw_sr_p_N4096_T4.out
+│   │   │   ├── fw_sr_p_N4096_T64.err
+│   │   │   ├── fw_sr_p_N4096_T64.out
+│   │   │   ├── fw_sr_p_N4096_T8.err
+│   │   │   └── fw_sr_p_N4096_T8.out
 │   │   ├── fw.c
 │   │   ├── fw_sr.c
+│   │   ├── fw_sr_p.c
 │   │   ├── fw_tiled.c
+│   │   ├── make_fw.err
+│   │   ├── make_fw.out
 │   │   ├── make_on_queue.sh
+│   │   ├── make_on_queue.sh.save
 │   │   ├── Makefile
+│   │   ├── run_fw_sr_p.pbs_err
+│   │   ├── run_fw_sr_p.pbs_out
 │   │   ├── run_on_queue.sh
 │   │   ├── util.c
 │   │   └── util.h
@@ -176,7 +223,10 @@ Parallel_Processing_Systems/
 │       │   │           └── output.txt
 │       │   └── serial/
 │       │       ├── aff/
-│       │       │   └── S256_N16_C32_L10_T1/
+│       │       │   ├── S256_N16_C32_L10_T1/
+│       │       │   │   ├── meta.txt
+│       │       │   │   └── output.txt
+│       │       │   └── S256_N1_C4_L10_T1/
 │       │       │       ├── meta.txt
 │       │       │       └── output.txt
 │       │       └── noaff/
@@ -191,15 +241,20 @@ Parallel_Processing_Systems/
 │       │   │   ├── 2.1.1_shared_speedup.png
 │       │   │   ├── 2.1.1_shared_speedup_par1.png
 │       │   │   ├── 2.1.1_shared_time.png
+│       │   │   ├── 2.1.2_reduction_speedup.png
+│       │   │   ├── 2.1.2_reduction_speedup_par1.png
+│       │   │   ├── 2.1.2_reduction_time.png
 │       │   │   ├── 2.1.2_shared_speedup.png
 │       │   │   ├── 2.1.2_shared_speedup_par1.png
 │       │   │   └── 2.1.2_shared_time.png
 │       │   ├── results/
 │       │   │   ├── results_2.1.1_reduction.txt
 │       │   │   ├── results_2.1.1_shared.txt
+│       │   │   ├── results_2.1.2_reduction.txt
 │       │   │   └── results_2.1.2_shared.txt
 │       │   ├── results_2.1.1_reduction.py
 │       │   ├── results_2.1.1_shared.py
+│       │   ├── results_2.1.2_reduction.py
 │       │   └── results_2.1.2_shared.py
 │       ├── file_io.c
 │       ├── file_io.o
@@ -248,6 +303,7 @@ Parallel_Processing_Systems/
 │   │   └── project_struct.txt
 │   └── report/
 │       ├── final/
+│       │   └── parlab05_report_a1-a2_final.pdf
 │       ├── individual/
 │       │   ├── a1/
 │       │   │   ├── report_misc/
@@ -259,7 +315,20 @@ Parallel_Processing_Systems/
 │       │   │   ├── parlab05_report_a1.pdf
 │       │   │   └── parlab05_report_a1_final.pdf
 │       │   ├── a2/
-│       │   │   └── report_misc/
+│       │   │   ├── report_misc/
+│       │   │   │   ├── FW/
+│       │   │   │   │   ├── fw_sr_p.c.pdf
+│       │   │   │   │   └── run_on_queue.sh.pdf
+│       │   │   │   └── kmeans/
+│       │   │   │       ├── file_io.c.pdf
+│       │   │   │       ├── make_on_queue.sh.pdf
+│       │   │   │       ├── Makefile.pdf
+│       │   │   │       ├── omp_naive_kmeans.c.pdf
+│       │   │   │       ├── omp_reduction_kmeans.c.pdf
+│       │   │   │       └── run_on_queue.sh.pdf
+│       │   │   ├── parlab05_report_a2.docx
+│       │   │   ├── parlab05_report_a2.pdf
+│       │   │   └── parlab05_report_a2_final.pdf
 │       │   ├── a3/
 │       │   ├── a4/
 │       │   ├── a5/
@@ -275,4 +344,4 @@ Parallel_Processing_Systems/
 ├── LICENSE
 └── README.md
 
-Total directories: 91, Total files: 185
+Total directories: 93, Total files: 252
