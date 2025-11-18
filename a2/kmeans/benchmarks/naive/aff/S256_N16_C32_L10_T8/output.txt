@@ -38,7 +38,7 @@ clusters[31] =   9.97   5.78   4.44   1.06   8.12   0.21   0.43   8.79   5.76   
 
 OpenMP Kmeans - Naive	(number of threads: 8)
 	completed loop 1	completed loop 2	completed loop 3	completed loop 4	completed loop 5	completed loop 6	completed loop 7	completed loop 8	completed loop 9	completed loop 10
-        nloops =  10   (total =  3.1912s)  (per loop =  0.3191s)
+        nloops =  10   (total =  3.7640s)  (per loop =  0.3764s)
 
 Final cluster centers:
 clusters[0] =   2.73   6.54   6.82   2.67   6.35   6.00   5.78   6.80   5.65   4.14   4.00   5.84   3.79   2.80   5.21   3.07 

@@ -91,7 +91,7 @@ void kmeans(double *objects,     /* in: [numObjs][numCoords] */
 /*
  * TODO: Detect parallelizable region and use appropriate OpenMP pragmas
  */
-#pragma omp parallel for reduction(+ : delta) private(index, j)
+#pragma omp parallel for private(index, j)
         for (i = 0; i < numObjs; i++)
         {
             // find the array index of nearest cluster center
@@ -99,7 +99,11 @@ void kmeans(double *objects,     /* in: [numObjs][numCoords] */
 
             // if membership changes, increase delta by 1
             if (membership[i] != index)
+            {
+
+#pragma omp atomic // protect update on shared "delta" variable
                 delta += 1.0;
+            }
 
             // assign the membership to object i
             membership[i] = index;
@@ -143,4 +147,3 @@ void kmeans(double *objects,     /* in: [numObjs][numCoords] */
     free(newClusters);
     free(newClusterSize);
 }
-

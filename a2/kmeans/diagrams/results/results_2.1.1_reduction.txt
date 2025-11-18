@@ -1,0 +1,10 @@
+KIND       RUN_TAG               BIN                   T   AFF  SIZE  COORDS  CLUSTERS  LOOPS  NLOOPS  TOTAL    PER_LOOP
+---------  --------------------  --------------------  --  ---  ----  ------  --------  -----  ------  -------  --------
+serial     S256_N16_C32_L10_T1   seq_kmeans            1   aff  256   16      32        10     10      12.6413  1.2641
+reduction  S256_N16_C32_L10_T1   omp_reduction_kmeans  1   aff  256   16      32        10     10      14.6228  1.4623
+reduction  S256_N16_C32_L10_T2   omp_reduction_kmeans  2   aff  256   16      32        10     10      7.3607   0.7361
+reduction  S256_N16_C32_L10_T4   omp_reduction_kmeans  4   aff  256   16      32        10     10      3.9152   0.3915
+reduction  S256_N16_C32_L10_T8   omp_reduction_kmeans  8   aff  256   16      32        10     10      2.1338   0.2134
+reduction  S256_N16_C32_L10_T16  omp_reduction_kmeans  16  aff  256   16      32        10     10      1.1350   0.1135
+reduction  S256_N16_C32_L10_T32  omp_reduction_kmeans  32  aff  256   16      32        10     10      0.5971   0.0597
+reduction  S256_N16_C32_L10_T64  omp_reduction_kmeans  64  aff  256   16      32        10     10      0.4848   0.0485

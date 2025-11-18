@@ -1,0 +1,6 @@
+[run_on_queue] BIN=omp_reduction_kmeans
+[run_on_queue] OMP_NUM_THREADS=2
+[run_on_queue] GOMP_CPU_AFFINITY=0 1
+[run_on_queue] AFF_LABEL=aff
+[run_on_queue] Params: -s 256 -n 1 -c 4 -l 10
+[run_on_queue] Result dir: /home/parallel/parlab05/a2/kmeans/benchmarks/reduction/aff/S256_N1_C4_L10_T2

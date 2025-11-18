@@ -1,0 +1,11 @@
+# results for 2.1.2 shared (default affinity)
+KIND    RUN_TAG               BIN               T   AFF  SIZE  COORDS  CLUSTERS  LOOPS  NLOOPS  TOTAL(s)  PER_LOOP(s)
+------  --------------------  ----------------  --  ---  ----  ------  --------  -----  ------  --------  -----------
+serial  S256_N16_C32_L10_T1   seq_kmeans        1   aff  256   16      32        10     10       12.6413       1.2641
+naive   S256_N16_C32_L10_T1   omp_naive_kmeans  1   aff  256   16      32        10     10       17.5093       1.7509
+naive   S256_N16_C32_L10_T2   omp_naive_kmeans  2   aff  256   16      32        10     10        9.9607       0.9961
+naive   S256_N16_C32_L10_T4   omp_naive_kmeans  4   aff  256   16      32        10     10        5.7846       0.5785
+naive   S256_N16_C32_L10_T8   omp_naive_kmeans  8   aff  256   16      32        10     10        3.7640       0.3764
+naive   S256_N16_C32_L10_T16  omp_naive_kmeans  16  aff  256   16      32        10     10        8.5675       0.8568
+naive   S256_N16_C32_L10_T32  omp_naive_kmeans  32  aff  256   16      32        10     10       12.0138       1.2014
+naive   S256_N16_C32_L10_T64  omp_naive_kmeans  64  aff  256   16      32        10     10       10.0738       1.0074

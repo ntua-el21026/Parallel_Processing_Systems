@@ -57,3 +57,5 @@ mkdir -p "${RESULT_DIR}"
 
 "./${BIN}" -s "${SIZE}" -n "${COORDS}" -c "${CLUSTERS}" -l "${LOOPS}" \
   | tee "${RESULT_DIR}/output.txt"
+
+
