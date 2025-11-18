@@ -17,5 +17,5 @@
 ## Run make in the src folder (modify properly)
 
 module load openmp
-cd <FIX_PATH>
+cd /home/parallel/parlab05/a2/FW
 make

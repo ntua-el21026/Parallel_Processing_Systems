@@ -7,7 +7,7 @@
 #PBS -l walltime=01:00:00
 
 # Submission details
-# usage—no affinity (default): qsub -q serial -l nodes=sandman:ppn=64 -v THREADS=32,BIN=omp_naive_kmeans run_on_queue.sh
+# usage—no affinity (default): C
 # with default affinity (bind 0..T-1): qsub -q serial -l nodes=sandman:ppn=64 -v THREADS=32,AFFINITY=default,BIN=omp_naive_kmeans run_on_queue.sh
 # BIN=seq_kmeans|omp_naive_kmeans|omp_reduction_kmeans
 # optional VARS: SIZE=256,COORDS=16,CLUSTERS=32,LOOPS=10

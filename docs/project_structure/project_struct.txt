@@ -69,14 +69,12 @@ Parallel_Processing_Systems/
 │   ├── makejob.out
 │   └── run_on_queue.sh
 ├── a2/
-│   ├── diagrams/
-│   │   ├── FW/
-│   │   └── kmeans/
 │   ├── docs/
 │   │   ├── askisi2-2025-26.pdf
 │   │   └── pps_exercises_2025_2026.pdf
 │   ├── FW/
 │   │   ├── benchmarks/
+│   │   ├── diagrams/
 │   │   ├── fw.c
 │   │   ├── fw_sr.c
 │   │   ├── fw_tiled.c
@@ -87,30 +85,160 @@ Parallel_Processing_Systems/
 │   │   └── util.h
 │   └── kmeans/
 │       ├── benchmarks/
+│       │   ├── naive/
+│       │   │   ├── aff/
+│       │   │   │   ├── S256_N16_C32_L10_T1/
+│       │   │   │   │   ├── meta.txt
+│       │   │   │   │   └── output.txt
+│       │   │   │   ├── S256_N16_C32_L10_T16/
+│       │   │   │   │   ├── meta.txt
+│       │   │   │   │   └── output.txt
+│       │   │   │   ├── S256_N16_C32_L10_T2/
+│       │   │   │   │   ├── meta.txt
+│       │   │   │   │   └── output.txt
+│       │   │   │   ├── S256_N16_C32_L10_T32/
+│       │   │   │   │   ├── meta.txt
+│       │   │   │   │   └── output.txt
+│       │   │   │   ├── S256_N16_C32_L10_T4/
+│       │   │   │   │   ├── meta.txt
+│       │   │   │   │   └── output.txt
+│       │   │   │   ├── S256_N16_C32_L10_T64/
+│       │   │   │   │   ├── meta.txt
+│       │   │   │   │   └── output.txt
+│       │   │   │   └── S256_N16_C32_L10_T8/
+│       │   │   │       ├── meta.txt
+│       │   │   │       └── output.txt
+│       │   │   └── noaff/
+│       │   │       ├── S256_N16_C32_L10_T1/
+│       │   │       │   ├── meta.txt
+│       │   │       │   └── output.txt
+│       │   │       ├── S256_N16_C32_L10_T16/
+│       │   │       │   ├── meta.txt
+│       │   │       │   └── output.txt
+│       │   │       ├── S256_N16_C32_L10_T2/
+│       │   │       │   ├── meta.txt
+│       │   │       │   └── output.txt
+│       │   │       ├── S256_N16_C32_L10_T32/
+│       │   │       │   ├── meta.txt
+│       │   │       │   └── output.txt
+│       │   │       ├── S256_N16_C32_L10_T4/
+│       │   │       │   ├── meta.txt
+│       │   │       │   └── output.txt
+│       │   │       ├── S256_N16_C32_L10_T64/
+│       │   │       │   ├── meta.txt
+│       │   │       │   └── output.txt
+│       │   │       └── S256_N16_C32_L10_T8/
+│       │   │           ├── meta.txt
+│       │   │           └── output.txt
+│       │   ├── reduction/
+│       │   │   └── aff/
+│       │   │       ├── S256_N16_C32_L10_T1/
+│       │   │       │   ├── meta.txt
+│       │   │       │   └── output.txt
+│       │   │       ├── S256_N16_C32_L10_T16/
+│       │   │       │   ├── meta.txt
+│       │   │       │   └── output.txt
+│       │   │       ├── S256_N16_C32_L10_T2/
+│       │   │       │   ├── meta.txt
+│       │   │       │   └── output.txt
+│       │   │       ├── S256_N16_C32_L10_T32/
+│       │   │       │   ├── meta.txt
+│       │   │       │   └── output.txt
+│       │   │       ├── S256_N16_C32_L10_T4/
+│       │   │       │   ├── meta.txt
+│       │   │       │   └── output.txt
+│       │   │       ├── S256_N16_C32_L10_T64/
+│       │   │       │   ├── meta.txt
+│       │   │       │   └── output.txt
+│       │   │       ├── S256_N16_C32_L10_T8/
+│       │   │       │   ├── meta.txt
+│       │   │       │   └── output.txt
+│       │   │       ├── S256_N1_C4_L10_T1/
+│       │   │       │   ├── meta.txt
+│       │   │       │   └── output.txt
+│       │   │       ├── S256_N1_C4_L10_T16/
+│       │   │       │   ├── meta.txt
+│       │   │       │   └── output.txt
+│       │   │       ├── S256_N1_C4_L10_T2/
+│       │   │       │   ├── meta.txt
+│       │   │       │   └── output.txt
+│       │   │       ├── S256_N1_C4_L10_T32/
+│       │   │       │   ├── meta.txt
+│       │   │       │   └── output.txt
+│       │   │       ├── S256_N1_C4_L10_T4/
+│       │   │       │   ├── meta.txt
+│       │   │       │   └── output.txt
+│       │   │       ├── S256_N1_C4_L10_T64/
+│       │   │       │   ├── meta.txt
+│       │   │       │   └── output.txt
+│       │   │       └── S256_N1_C4_L10_T8/
+│       │   │           ├── meta.txt
+│       │   │           └── output.txt
+│       │   └── serial/
+│       │       ├── aff/
+│       │       │   └── S256_N16_C32_L10_T1/
+│       │       │       ├── meta.txt
+│       │       │       └── output.txt
+│       │       └── noaff/
+│       │           └── S256_N16_C32_L10_T1/
+│       │               ├── meta.txt
+│       │               └── output.txt
+│       ├── diagrams/
+│       │   ├── images/
+│       │   │   ├── 2.1.1_reduction_speedup.png
+│       │   │   ├── 2.1.1_reduction_speedup_par1.png
+│       │   │   ├── 2.1.1_reduction_time.png
+│       │   │   ├── 2.1.1_shared_speedup.png
+│       │   │   ├── 2.1.1_shared_speedup_par1.png
+│       │   │   ├── 2.1.1_shared_time.png
+│       │   │   ├── 2.1.2_shared_speedup.png
+│       │   │   ├── 2.1.2_shared_speedup_par1.png
+│       │   │   └── 2.1.2_shared_time.png
+│       │   ├── results/
+│       │   │   ├── results_2.1.1_reduction.txt
+│       │   │   ├── results_2.1.1_shared.txt
+│       │   │   └── results_2.1.2_shared.txt
+│       │   ├── results_2.1.1_reduction.py
+│       │   ├── results_2.1.1_shared.py
+│       │   └── results_2.1.2_shared.py
 │       ├── file_io.c
+│       ├── file_io.o
 │       ├── kmeans.h
 │       ├── main.c
+│       ├── main.o
+│       ├── make_kmeans.err
+│       ├── make_kmeans.out
 │       ├── make_on_queue.sh
 │       ├── Makefile
 │       ├── omp_naive_kmeans.c
+│       ├── omp_naive_kmeans.o
 │       ├── omp_reduction_kmeans.c
+│       ├── omp_reduction_kmeans.o
+│       ├── run_kmeans.err
+│       ├── run_kmeans.out
 │       ├── run_on_queue.sh
 │       ├── seq_kmeans.c
-│       └── util.c
+│       ├── seq_kmeans.o
+│       ├── util.c
+│       └── util.o
 ├── a3/
 │   └── docs/
+│       └── pps_exercises_2025_2026.pdf
 ├── a4/
 │   └── docs/
 │       └── docs/
 ├── a5/
+├── a6/
 ├── docs/
 │   ├── lecture_slides/
+│   │   ├── OpenMP.pdf
+│   │   ├── Εισαγωγή.pdf
+│   │   ├── Παράλληλος Προγραμματισμός, Μέρος Α.pdf
+│   │   ├── Παράλληλος Προγραμματισμός, Μέρος Β.pdf
+│   │   ├── Παράλληλος Προγραμματισμός, Μέρος Γ.pdf
+│   │   ├── Παράλληλος Προγραμματισμός, Μέρος Δ.pdf
+│   │   └── Συγχρονισμός.pdf
 │   ├── misc/
-│   │   ├── lecture_notes/
-│   │   │   ├── OpenMP.pdf
-│   │   │   ├── Εισαγωγή.pdf
-│   │   │   ├── Παράλληλος Προγραμματισμός, Μέρος Α.pdf
-│   │   │   └── Παράλληλος Προγραμματισμός, Μέρος Β.pdf
 │   │   ├── File transfers.txt
 │   │   ├── Lab code.txt
 │   │   ├── pps-lab-guide_pres.pdf
@@ -131,9 +259,11 @@ Parallel_Processing_Systems/
 │       │   │   ├── parlab05_report_a1.pdf
 │       │   │   └── parlab05_report_a1_final.pdf
 │       │   ├── a2/
+│       │   │   └── report_misc/
 │       │   ├── a3/
 │       │   ├── a4/
-│       │   └── a5/
+│       │   ├── a5/
+│       │   └── a6/
 │       └── parlab05 - report_template.docx
 ├── shell_scripts/
 │   ├── mount_orion.sh
@@ -145,4 +275,4 @@ Parallel_Processing_Systems/
 ├── LICENSE
 └── README.md
 
-Total directories: 50, Total files: 96
+Total directories: 91, Total files: 185

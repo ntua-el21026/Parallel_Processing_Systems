@@ -1,24 +1,42 @@
 #!/bin/bash
 
-## Give the Job a descriptive name
-#PBS -N run_fw
+#PBS -N run_fw_sr_p
 
-## Output and error files
-#PBS -o run_fw.out
-#PBS -e run_fw.err
+## Output error 
+#PBS -o run_fw_sr_p.pbs_out
+#PBS -e run_fw_sr_p.pbs_err
 
-## How many machines should we get? 
-#PBS -l nodes=1:ppn=8
+## Sandman, serial queue, 64 threads
+#PBS -q serial
+#PBS -l nodes=sandman:ppn=64
 
-##How long should the job run for?
-#PBS -l walltime=00:10:00
+#PBS -l walltime=01:00:00
 
-## Start 
-## Run make in the src folder (modify properly)
+cd /home/parallel/parlab05/a2/FW
 
-module load openmp
-cd <FIX_PATH>
-export OMP_NUM_THREADS=8
-./fw <SIZE>
-# ./fw_sr <SIZE> <BSIZE>
-# ./fw_tiled <SIZE> <BSIZE>
+module load openmp 
+
+N_VALUES="1024 2048 4096"
+
+# Block size 
+B=64
+
+OUTDIR="benchmarks"
+mkdir -p "$OUTDIR"
+
+for N in $N_VALUES; do
+    for T in 1 2 4 8 16 32 64; do
+        
+        export OMP_NUM_THREADS=$T
+        echo "Running N=$N, B=$B, threads=$T"
+        
+        #outputs
+        OUT="${OUTDIR}/fw_sr_p_N${N}_T${T}.out"
+        ERR="${OUTDIR}/fw_sr_p_N${N}_T${T}.err"
+        
+        #  - stdout → OUT
+        #  - stderr → ERR
+        ./fw_sr_p "$N" "$B" >"$OUT" 2>"$ERR"
+    done
+done
+
