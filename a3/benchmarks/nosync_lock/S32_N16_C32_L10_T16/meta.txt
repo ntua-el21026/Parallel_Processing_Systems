@@ -1,0 +1,6 @@
+[run_on_queue] BIN=kmeans_omp_nosync_lock
+[run_on_queue] LOCK=nosync_lock
+[run_on_queue] OMP_NUM_THREADS=16
+[run_on_queue] GOMP_CPU_AFFINITY=0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+[run_on_queue] Params: -s 32 -n 16 -c 32 -l 10
+[run_on_queue] Result dir: benchmarks/nosync_lock/S32_N16_C32_L10_T16

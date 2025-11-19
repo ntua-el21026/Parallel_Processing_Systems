@@ -1,0 +1,9 @@
+KIND       RUN_TAG               BIN                   T   AFF  SIZE  COORDS  CLUSTERS  LOOPS  NLOOPS  TOTAL    PER_LOOP
+---------  --------------------  --------------------  --  ---  ----  ------  --------  -----  ------  -------  --------
+pthread_spiS32_N16_C32_L10_T1    kmeans_omp_pthread_spi1_loaff  32    16      32        10     10      1.3174   0.1317
+pthread_spiS32_N16_C32_L10_T2    kmeans_omp_pthread_spi2_loaff  32    16      32        10     10      0.7447   0.0745
+pthread_spiS32_N16_C32_L10_T4    kmeans_omp_pthread_spi4_loaff  32    16      32        10     10      0.5589   0.0559
+pthread_spiS32_N16_C32_L10_T8    kmeans_omp_pthread_spi8_loaff  32    16      32        10     10      0.8860   0.0886
+pthread_spiS32_N16_C32_L10_T16   kmeans_omp_pthread_spi16loaff  32    16      32        10     10      3.3755   0.3376
+pthread_spiS32_N16_C32_L10_T32   kmeans_omp_pthread_spi32loaff  32    16      32        10     10      7.7281   0.7728
+pthread_spiS32_N16_C32_L10_T64   kmeans_omp_pthread_spi64loaff  32    16      32        10     10      3.7769   0.3777

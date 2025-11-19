@@ -1,0 +1,9 @@
+KIND       RUN_TAG               BIN                   T   AFF  SIZE  COORDS  CLUSTERS  LOOPS  NLOOPS  TOTAL    PER_LOOP
+---------  --------------------  --------------------  --  ---  ----  ------  --------  -----  ------  -------  --------
+nosync_lockS32_N16_C32_L10_T1    kmeans_omp_nosync_lock1   aff  32    16      32        10     10      1.3238   0.1324
+nosync_lockS32_N16_C32_L10_T2    kmeans_omp_nosync_lock2   aff  32    16      32        10     10      0.7005   0.0701
+nosync_lockS32_N16_C32_L10_T4    kmeans_omp_nosync_lock4   aff  32    16      32        10     10      0.4084   0.0408
+nosync_lockS32_N16_C32_L10_T8    kmeans_omp_nosync_lock8   aff  32    16      32        10     10      0.2984   0.0298
+nosync_lockS32_N16_C32_L10_T16   kmeans_omp_nosync_lock16  aff  32    16      32        10     10      0.7346   0.0735
+nosync_lockS32_N16_C32_L10_T32   kmeans_omp_nosync_lock32  aff  32    16      32        10     10      1.3143   0.1314
+nosync_lockS32_N16_C32_L10_T64   kmeans_omp_nosync_lock64  aff  32    16      32        10     10      0.9590   0.0959

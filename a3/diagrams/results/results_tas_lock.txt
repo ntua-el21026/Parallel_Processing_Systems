@@ -1,0 +1,9 @@
+KIND       RUN_TAG               BIN                   T   AFF  SIZE  COORDS  CLUSTERS  LOOPS  NLOOPS  TOTAL    PER_LOOP
+---------  --------------------  --------------------  --  ---  ----  ------  --------  -----  ------  -------  --------
+tas_lock   S32_N16_C32_L10_T1    kmeans_omp_tas_lock   1   aff  32    16      32        10     10      1.3291   0.1329
+tas_lock   S32_N16_C32_L10_T2    kmeans_omp_tas_lock   2   aff  32    16      32        10     10      0.7396   0.0740
+tas_lock   S32_N16_C32_L10_T4    kmeans_omp_tas_lock   4   aff  32    16      32        10     10      0.5305   0.0531
+tas_lock   S32_N16_C32_L10_T8    kmeans_omp_tas_lock   8   aff  32    16      32        10     10      1.1465   0.1147
+tas_lock   S32_N16_C32_L10_T16   kmeans_omp_tas_lock   16  aff  32    16      32        10     10      4.5320   0.4532
+tas_lock   S32_N16_C32_L10_T32   kmeans_omp_tas_lock   32  aff  32    16      32        10     10      10.6944  1.0694
+tas_lock   S32_N16_C32_L10_T64   kmeans_omp_tas_lock   64  aff  32    16      32        10     10      9.3531   0.9353

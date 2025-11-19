@@ -1,0 +1,9 @@
+KIND       RUN_TAG               BIN                   T   AFF  SIZE  COORDS  CLUSTERS  LOOPS  NLOOPS  TOTAL    PER_LOOP
+---------  --------------------  --------------------  --  ---  ----  ------  --------  -----  ------  -------  --------
+critical   S32_N16_C32_L10_T1    kmeans_omp_critical   1   aff  32    16      32        10     10      1.3187   0.1319
+critical   S32_N16_C32_L10_T2    kmeans_omp_critical   2   aff  32    16      32        10     10      0.7827   0.0783
+critical   S32_N16_C32_L10_T4    kmeans_omp_critical   4   aff  32    16      32        10     10      0.4916   0.0492
+critical   S32_N16_C32_L10_T8    kmeans_omp_critical   8   aff  32    16      32        10     10      0.7655   0.0766
+critical   S32_N16_C32_L10_T16   kmeans_omp_critical   16  aff  32    16      32        10     10      3.4095   0.3409
+critical   S32_N16_C32_L10_T32   kmeans_omp_critical   32  aff  32    16      32        10     10      7.9911   0.7991
+critical   S32_N16_C32_L10_T64   kmeans_omp_critical   64  aff  32    16      32        10     10      6.1087   0.6109
