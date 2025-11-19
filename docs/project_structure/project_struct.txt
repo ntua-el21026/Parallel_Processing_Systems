@@ -277,8 +277,253 @@ Parallel_Processing_Systems/
 │       ├── util.c
 │       └── util.o
 ├── a3/
-│   └── docs/
-│       └── pps_exercises_2025_2026.pdf
+│   ├── benchmarks/
+│   │   ├── array_lock/
+│   │   │   ├── S32_N16_C32_L10_T1/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T16/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T2/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T32/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T4/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T64/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   └── S32_N16_C32_L10_T8/
+│   │   │       ├── meta.txt
+│   │   │       └── output.txt
+│   │   ├── clh_lock/
+│   │   │   ├── S32_N16_C32_L10_T1/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T16/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T2/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T32/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T4/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T64/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   └── S32_N16_C32_L10_T8/
+│   │   │       ├── meta.txt
+│   │   │       └── output.txt
+│   │   ├── critical/
+│   │   │   ├── S32_N16_C32_L10_T1/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T16/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T2/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T32/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T4/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T64/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   └── S32_N16_C32_L10_T8/
+│   │   │       ├── meta.txt
+│   │   │       └── output.txt
+│   │   ├── nosync_lock/
+│   │   │   ├── S32_N16_C32_L10_T1/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T16/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T2/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T32/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T4/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T64/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   └── S32_N16_C32_L10_T8/
+│   │   │       ├── meta.txt
+│   │   │       └── output.txt
+│   │   ├── pthread_mutex_lock/
+│   │   │   ├── S32_N16_C32_L10_T1/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T16/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T2/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T32/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T4/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T64/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   └── S32_N16_C32_L10_T8/
+│   │   │       ├── meta.txt
+│   │   │       └── output.txt
+│   │   ├── pthread_spin_lock/
+│   │   │   ├── S32_N16_C32_L10_T1/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T16/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T2/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T32/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T4/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T64/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   └── S32_N16_C32_L10_T8/
+│   │   │       ├── meta.txt
+│   │   │       └── output.txt
+│   │   ├── tas_lock/
+│   │   │   ├── S32_N16_C32_L10_T1/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T16/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T2/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T32/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T4/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   ├── S32_N16_C32_L10_T64/
+│   │   │   │   ├── meta.txt
+│   │   │   │   └── output.txt
+│   │   │   └── S32_N16_C32_L10_T8/
+│   │   │       ├── meta.txt
+│   │   │       └── output.txt
+│   │   └── ttas_lock/
+│   │       ├── S32_N16_C32_L10_T1/
+│   │       │   ├── meta.txt
+│   │       │   └── output.txt
+│   │       ├── S32_N16_C32_L10_T16/
+│   │       │   ├── meta.txt
+│   │       │   └── output.txt
+│   │       ├── S32_N16_C32_L10_T2/
+│   │       │   ├── meta.txt
+│   │       │   └── output.txt
+│   │       ├── S32_N16_C32_L10_T32/
+│   │       │   ├── meta.txt
+│   │       │   └── output.txt
+│   │       ├── S32_N16_C32_L10_T4/
+│   │       │   ├── meta.txt
+│   │       │   └── output.txt
+│   │       ├── S32_N16_C32_L10_T64/
+│   │       │   ├── meta.txt
+│   │       │   └── output.txt
+│   │       └── S32_N16_C32_L10_T8/
+│   │           ├── meta.txt
+│   │           └── output.txt
+│   ├── diagrams/
+│   │   ├── images/
+│   │   │   ├── results_all_total.png
+│   │   │   ├── results_array_lock_total.png
+│   │   │   ├── results_clh_lock_total.png
+│   │   │   ├── results_critical_total.png
+│   │   │   ├── results_nosync_lock_total.png
+│   │   │   ├── results_pthread_mutex_lock_total.png
+│   │   │   ├── results_pthread_spin_lock_total.png
+│   │   │   ├── results_tas_lock_total.png
+│   │   │   └── results_ttas_lock_total.png
+│   │   ├── results/
+│   │   │   ├── results_array_lock.txt
+│   │   │   ├── results_clh_lock.txt
+│   │   │   ├── results_critical.txt
+│   │   │   ├── results_nosync_lock.txt
+│   │   │   ├── results_pthread_mutex_lock.txt
+│   │   │   ├── results_pthread_spin_lock.txt
+│   │   │   ├── results_tas_lock.txt
+│   │   │   └── results_ttas_lock.txt
+│   │   └── diagrams.py
+│   ├── docs/
+│   │   └── pps_exercises_2025_2026.pdf
+│   ├── locks/
+│   │   ├── alloc.h
+│   │   ├── array_lock.c
+│   │   ├── array_lock.o
+│   │   ├── clh_lock.c
+│   │   ├── clh_lock.o
+│   │   ├── lock.h
+│   │   ├── nosync_lock.c
+│   │   ├── nosync_lock.o
+│   │   ├── pthread_mutex_lock.c
+│   │   ├── pthread_mutex_lock.o
+│   │   ├── pthread_spin_lock.c
+│   │   ├── pthread_spin_lock.o
+│   │   ├── tas_lock.c
+│   │   ├── tas_lock.o
+│   │   ├── ttas_lock.c
+│   │   └── ttas_lock.o
+│   ├── file_io.c
+│   ├── file_io.o
+│   ├── kmeans.h
+│   ├── kmeans_omp_array_lock
+│   ├── kmeans_omp_clh_lock
+│   ├── kmeans_omp_critical
+│   ├── kmeans_omp_naive
+│   ├── kmeans_omp_nosync_lock
+│   ├── kmeans_omp_pthread_mutex_lock
+│   ├── kmeans_omp_pthread_spin_lock
+│   ├── kmeans_omp_tas_lock
+│   ├── kmeans_omp_ttas_lock
+│   ├── main.c
+│   ├── main.o
+│   ├── make_kmeans.err
+│   ├── make_kmeans.out
+│   ├── make_on_queue.sh
+│   ├── Makefile
+│   ├── omp_critical_kmeans.c
+│   ├── omp_critical_kmeans.o
+│   ├── omp_lock_kmeans.c
+│   ├── omp_lock_kmeans.o
+│   ├── omp_naive_kmeans.c
+│   ├── omp_naive_kmeans.o
+│   ├── run_kmeans_locks.err
+│   ├── run_kmeans_locks.out
+│   ├── run_on_queue.sh
+│   ├── seq_kmeans.c
+│   ├── util.c
+│   └── util.o
 ├── a4/
 │   └── docs/
 │       └── docs/
@@ -295,7 +540,6 @@ Parallel_Processing_Systems/
 │   │   └── Συγχρονισμός.pdf
 │   ├── misc/
 │   │   ├── File transfers.txt
-│   │   ├── Lab code.txt
 │   │   ├── pps-lab-guide_pres.pdf
 │   │   └── pps_lab_guide.pdf
 │   ├── project_structure/
@@ -330,6 +574,9 @@ Parallel_Processing_Systems/
 │       │   │   ├── parlab05_report_a2.pdf
 │       │   │   └── parlab05_report_a2_final.pdf
 │       │   ├── a3/
+│       │   │   ├── report_misc/
+│       │   │   │   └── run_on_queue.sh.pdf
+│       │   │   └── parlab05_report_a3.docx
 │       │   ├── a4/
 │       │   ├── a5/
 │       │   └── a6/
@@ -344,4 +591,4 @@ Parallel_Processing_Systems/
 ├── LICENSE
 └── README.md
 
-Total directories: 93, Total files: 252
+Total directories: 163, Total files: 429
